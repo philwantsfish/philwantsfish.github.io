@@ -85,10 +85,11 @@ At this point we can consider the ui subproject and jetty subproject vulnerable.
 |  Spring1 | org.springframework:spring-core:4.1.4.RELEASE, org.springframework:spring-beans:4.1.4.RELEASE | n/a | N |
 |  Spring2 | org.springframework:spring-core:4.1.4.RELEASE, org.springframework:spring-aop:4.1.4.RELEASE, aopalliance:aopalliance:1.0, commons-logging:commons-logging:1.2 | n/a | N |
 
+<br/>
 
-The projects dependencies are all non-vulnerable versions. Downloading (Gradle 2.12)[https://gradle.org/gradle-download/] and checking the library versions again shows commons-collections 3.2.1. The commons-collections5 payload in ysoserial successful executes an arbitary commands. Looking through the Gradle release notes this vulnerability was not mentioned, I suspect the developers were unaware of it and were just upgrading their libraries. I've requested CVE-2016-6199 to track this vulnerability. 
+The projects dependencies are all non-vulnerable versions. Downloading [Gradle 2.12](https://gradle.org/gradle-download/) and checking the library versions again shows commons-collections 3.2.1. The commons-collections5 payload in ysoserial successful executes an arbitary commands. 
 
-
+Looking through the Gradle release notes this vulnerability was not mentioned, I suspect the developers were unaware of it and were just upgrading their libraries. I've requested CVE-2016-6199 to track this vulnerability. 
 
 ## Concluding thoughts
 
