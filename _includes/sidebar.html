@@ -1,0 +1,20 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Latest Posts</h3>
+  </div>
+  <ul class="list-group">
+    {% for post in site.posts limit:5 %}
+      <li class="list-group-item"><a href="{{ site.baseurl }}{{ post.url }}">{{ forloop.index }}. {{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+  </div>
+  <ul class="list-group">
+      {% for cat in site.categories %}
+        <li class="list-group-item"><a href="{{ site.baseurl }}/posts#{{ cat | first }}">{{ cat | first }}</a><span class="badge">{{ cat | last | size }}</span></li>
+      {% endfor %}
+  </ul>
+</div>

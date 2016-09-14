@@ -1,0 +1,14 @@
+@media (min-width: 768px) { /* tablets and up */
+    .group2 {
+        text-align: right;
+    }
+
+    .nav {
+      padding-top: 5px;
+    }
+
+}
+
+body {
+  padding-top: 70px; 
+}
