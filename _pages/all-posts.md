@@ -15,7 +15,7 @@ permalink: notused
 
         {% for post in site.posts %}
         <article>
-          <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
        
           <div class="row">
               <div class="group1 col-sm-6 col-md-6">
@@ -33,7 +33,7 @@ permalink: notused
           <p class="lead">{{ post.excerpt }}</p>
 
           <p class="pull-right">
-              <a href="{{ site.baseurl }}{{ post.url }}" class="pull-right">
+              <a href="{{ post.url }}" class="pull-right">
                   continue reading...
               </a>
           </p>
