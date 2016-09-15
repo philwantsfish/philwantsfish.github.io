@@ -9,29 +9,33 @@ permalink: projects
     <div class="container">
       <div class="col-md-8">
         <h1>Projects</h1>
+        <p>Below is a list of open source projects I've worked on</p>
         <hr/>
 
-        <p>Below is a list of open source projects I've worked on</p>
-
         <div class="row">
-          <!-- <h2><a href="http://shard.pw">Shard</a></h2> -->
-          <h2>Shard</h2>
-          <a href="http://shard.pw"><span class="label label-primary">Wiki</span></a>
-          <a href="http://github.com/philwantsfish/shard"><span class="label label-primary">GitHub</span></a>
-          <hr/>
-
-          <p>Shard description.... </p>
+          <div class="col-md-4">
+            <h2>Shard</h2>
+            <a href="http://shard.pw"><span class="label label-primary">Wiki</span></a>
+            <a href="http://github.com/philwantsfish/shard"><span class="label label-primary">GitHub</span></a>
+          </div>
+          <div class="col-md-8">
+            <br/>
+            <p>A command line tool to detect shared passwords.</p>
+          </div>
         </div>
 
         <hr/>
 
         <div class="row">
-          <h2>GDB exploit commands</h2>
-          <a href="http://philwantsfish.github.io/gdb_commands"><span class="label label-primary">Wiki</span></a>
-          <a href="http://github.com/philwantsfish/gdb_commands"><span class="label label-primary">GitHub</span></a>
-          <hr/>
-
-          <p>GDB command description....</p>
+          <div class="col-md-4">
+            <h2>GDB exploit commands</h2>
+            <a href="http://philwantsfish.github.io/gdb_commands"><span class="label label-primary">Wiki</span></a>
+            <a href="http://github.com/philwantsfish/gdb_commands"><span class="label label-primary">GitHub</span></a>
+          </div>
+          <div class="col-md-8">
+            <br/>
+            <p>GDB commands to aid exploit development</p>
+          </div>
         </div>
         <hr/>
       </div>

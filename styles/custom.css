@@ -9,6 +9,19 @@
 
 }
 
+div.vertical-line {
+  width: 1px; /* Line width */
+  background-color: black; /* Line color */
+  height: 100%; 
+  float: left; 
+}
+
+div.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
 body {
   padding-top: 70px; 
 }
