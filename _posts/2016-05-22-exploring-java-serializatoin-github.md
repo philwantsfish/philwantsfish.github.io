@@ -5,7 +5,7 @@ permalink: "security/java-deserialization-github"
 excerpt: "Java deserialization vulnerabilities have become easy to exploit and allow an attacker to remotely compromise a server. How prevalent are these vulnerabilities in open-source projects? This post explores how often Java projects use serialization and walks through exploiting a 0-day vulnerability in Gradle."
 categories: Deserialization 
 tags:
-  - Java Deserialization
+  - Deserialization
 ---
 
 
