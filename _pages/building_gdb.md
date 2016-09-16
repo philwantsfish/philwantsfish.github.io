@@ -1,5 +1,4 @@
 ---
-layout: single
 title: Exploit Exercises - Building GDB
 permalink: /building_gdb/
 ---

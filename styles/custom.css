@@ -27,11 +27,12 @@ body {
 }
 
 
-.post-meta {
-    display: block;
-    margin: 1.75rem 0 0 0;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.5rem;
-    line-height: 2.2rem;
-    color: #9EABB3;
+.left-border {
+  border-left: #d5dbde 1px solid;
+  padding-left: 15px 
+}
+
+.right-border {
+  border-right: #d5dbde 1px solid;
+  padding-right: 15px 
 }
