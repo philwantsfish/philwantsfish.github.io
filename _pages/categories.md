@@ -12,7 +12,7 @@ permalink: posts
       <div class="col-md-8">
         <div class="row">
           {% for category in site.categories %}
-            <a href="#{{ category | first }}"></a><p class="lead">{{ category | first }}</p>
+            <a href="#{{ category | first }}"></a><h2>{{ category | first }}</h2>
             <hr/>
             <ul>
             {% for posts in category %}
