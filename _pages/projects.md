@@ -13,7 +13,7 @@ permalink: projects
         <hr/>
 
         <div class="row">
-          <div class="col-md-4 right-border">
+          <div class="col-md-4">
             <h2>Shard</h2>
             <a href="http://shard.pw"><span class="label label-primary">Wiki</span></a>
             <a href="http://github.com/philwantsfish/shard"><span class="label label-primary">GitHub</span></a>
