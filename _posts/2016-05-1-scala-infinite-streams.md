@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Infinite streams and prime numbers
-excerpt: "Scala Streams are similar to Lists but evalute their elements lazily. This small detail makes a world of difference. This post explores Streams and how they can encapsulate infinate sets."
+excerpt: "Scala Streams are similar to Lists but evalute their elements lazily. This small detail makes a world of difference. This post explores Streams and how they can encapsulate infinite sets."
 permalink: "scala/streamsandprimes"
 categories: Scala
 tags:
