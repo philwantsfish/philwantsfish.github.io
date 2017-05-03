@@ -8,7 +8,7 @@ permalink: about
 
     <div class="container">
       <div class="col-md-8">
-        <p> im the best! </p>
+        <p> Some posts on programming / security.... will update this section soon</p>
       </div>
       <div class="col-md-4">
         {% include sidebar.html %}
