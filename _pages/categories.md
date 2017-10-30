@@ -9,7 +9,8 @@ permalink: posts
     {% include navigation.html %}
 
     <div class="container">
-      <div class="col-md-8">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
         <div class="row">
           {% for category in site.categories %}
             <a href="#{{ category | first }}"></a><h2>{{ category | first }}</h2>
@@ -26,9 +27,7 @@ permalink: posts
           {% endfor %}
         </div>
       </div> <!-- end of col-md-8 -->
-      <div class="col-md-4">
-        {% include sidebar.html %}
-      </div> <!-- end of col-md-4 -->
+      <div class="col-md-3"></div>
     </div> <!-- end of container -->
 
     {% include footer.html %}

@@ -26,3 +26,5 @@ paginate_path: "/page:num/"
 
 # Gems
 gems: [jekyll-paginate]
+
+port: 4567

@@ -6,8 +6,10 @@ permalink: projects
   <body>
     {% include navigation.html %}
 
+    <div class="col-md-3">
+    </div>
     <div class="container">
-      <div class="col-md-8">
+      <div class="col-md-6">
         <h1>Projects</h1>
         <p>Below is a list of open source projects I've worked on</p>
         <hr/>
@@ -39,8 +41,7 @@ permalink: projects
         </div>
         <hr/>
       </div>
-      <div class="col-md-4">
-        {% include sidebar.html %}
+      <div class="col-md-3">
       </div>
     </div>
 
