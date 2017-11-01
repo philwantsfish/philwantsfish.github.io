@@ -10,6 +10,7 @@ permalink: posts
     <p>sorted by categories</p>
     <hr/>
 
+    <div class="container-fluid">
     {% for category in site.categories %}
     <div class="row">
       <div class="col-md-4">
@@ -30,6 +31,7 @@ permalink: posts
     </div>
     <hr/>
     {% endfor %} 
+    </div>
 
     {% include footer.html %}
   </body>
