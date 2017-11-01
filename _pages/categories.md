@@ -1,5 +1,6 @@
 ---
 permalink: posts
+layout: post
 ---
 <html>
   {% include header.html %}
