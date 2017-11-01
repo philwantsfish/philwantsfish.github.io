@@ -11,7 +11,7 @@ permalink: projects
     <div class="container">
       <div class="col-md-6">
         <h1>Projects</h1>
-        <p>Below is a list of open source projects I've worked on</p>
+        <p>A collection of open source projects I've worked on</p>
         <hr/>
 
         <div class="row">

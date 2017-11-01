@@ -1,5 +1,4 @@
 ---
-title: Blogging like a salmon
 permalink: notused
 ---
 <html>
@@ -9,7 +8,7 @@ permalink: notused
     {% include navigation.html %}
 
     <div class="container">
-      <div class="col-md-4"> </div>
+      <div class="col-md-3"> </div>
       <div class="col-md-6">
         <h1>Latest Posts</h1>
         <hr/>
@@ -42,7 +41,7 @@ permalink: notused
         </article>
         {% endfor %}
       </div>
-      <div class="col-md-4"> </div>
+      <div class="col-md-3"> </div>
     </div> <!-- end of container -->
 
     {% include footer.html %}
