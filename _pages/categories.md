@@ -1,39 +1,29 @@
 ---
 permalink: posts
-layout: post
+layout: main
 ---
-<html>
-  {% include header.html %}
-  <body>
-    {% include navigation.html %}
 
-    <h1>Posts</h1>
-    <p>sorted by categories</p>
-    <hr/>
+<h1>Posts</h1>
+<p>sorted by categories</p>
+<hr/>
 
-    <div class="container-fluid">
-    {% for category in site.categories %}
-    <div class="row">
-      <div class="col-md-4">
-        <a href="#{{ category | first }}"></a><h2>{{ category | first }}</h2>
-      </div>
-      <div class="col-md-8">
-        <br/>
-        <ul>
-        {% for posts in category %}
-          {% for post in posts %}
-            {% if post.url %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-        </ul>
-      </div>
-    </div>
-    <hr/>
-    {% endfor %} 
-    </div>
-
-    {% include footer.html %}
-  </body>
-</html>
+{% for category in site.categories %}
+<div class="row">
+  <div class="col-md-4">
+    <a href="#{{ category | first }}"></a><h2>{{ category | first }}</h2>
+  </div>
+  <div class="col-md-8">
+    <br/>
+    <ul>
+    {% for posts in category %}
+      {% for post in posts %}
+        {% if post.url %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+<hr/>
+{% endfor %} 
