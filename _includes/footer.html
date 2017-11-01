@@ -7,4 +7,21 @@
 
 
 <!-- Include bootstrap javascript dependency -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+  // This script sets the proper navigation tab to active
+  $( document ).ready(function() {
+    // Get the current url
+    var url = location.pathname
+
+    // Pagination causes paths like /page2 /page3 etc. Handle these
+    if (url.match(/^\/page/)) {
+      $('ul.nav a[href="/"]').parent().addClass('active'); 
+    } else {
+      // Otherwise the navigation tab is the same as the href
+      console.log(`[+] Phil: ${$('ul.nav a[href="'+ url +'"]')}`)
+      $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+    }
+  });
+</script>
