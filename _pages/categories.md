@@ -3,9 +3,14 @@ permalink: posts
 layout: main
 ---
 
-<h1>Posts</h1>
-<p>sorted by categories</p>
-<hr/>
+<div class="row">
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <h1>Posts</h1>
+      <p>The collection of blogs posts sorted by category</p>
+    </div>
+  </div>
+</div>
 
 {% for category in site.categories %}
 <div class="row">

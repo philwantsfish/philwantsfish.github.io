@@ -5,11 +5,12 @@ layout: main
 
 <div class="row">
   <div class="col-md-12">
-    <h1>Projects</h1>
-    <p>A collection of open source projects I've worked on</p>
+    <div class="jumbotron">
+      <h1>Projects</h1>
+      <p>A collect of open source projects I've worked on.</p>
+    </div>
   </div>
 </div>
-<hr/>
 
 <div class="row">
   <div class="col-md-4">
