@@ -8,7 +8,7 @@ permalink: posts
 
     <div class="col-md-3"></div>
     
-    <div class="container">
+    <div class="container-fluid">
       <div class="col-md-6">
         <h1>Posts</h1>
         <p>sorted by categories</p>
