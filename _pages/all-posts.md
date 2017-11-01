@@ -1,6 +1,7 @@
 ---
 permalink: notused
 ---
+# This is not used, all posts are shown by categories.md
 <html>
   {% include header.html %}
   
