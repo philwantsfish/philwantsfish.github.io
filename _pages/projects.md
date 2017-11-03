@@ -7,7 +7,7 @@ layout: main
   <div class="col-md-12">
     <div class="jumbotron">
       <h1>Projects</h1>
-      <p>A collect of open source projects I've worked on</p>
+      <p>A collection of my open source projects</p>
     </div>
   </div>
 </div>

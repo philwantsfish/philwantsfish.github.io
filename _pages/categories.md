@@ -7,7 +7,7 @@ layout: main
   <div class="col-md-12">
     <div class="jumbotron">
       <h1>Posts</h1>
-      <p>The collection of blogs posts sorted by category</p>
+      <p>Blog posts sorted by category</p>
     </div>
   </div>
 </div>

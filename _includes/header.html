@@ -11,20 +11,4 @@
   
   <link rel="stylesheet" href="/styles/custom.css">
   
-  <script>
-    // This script sets the proper navigation tab to active
-    $( document ).ready(function() {
-      // Get the current url
-      var url = location.pathname
-      
-      // Pagination causes paths like /page2 /page3 etc. Handle these
-      if (url.match(/^\/page/)) {
-        $('ul.nav a[href="/"]').parent().addClass('active'); 
-      } else {
-        // Otherwise the navigation tab is the same as the href
-        console.log(`[+] Phil: ${$('ul.nav a[href="'+ url +'"]')}`)
-        $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
-      }
-    });
-  </script>
 </head>
