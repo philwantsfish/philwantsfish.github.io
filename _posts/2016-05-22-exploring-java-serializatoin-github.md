@@ -44,7 +44,9 @@ java      59699 pokeefe  182u  IPv6 0xb34e0a81bf8fe953      0t0  TCP *:60024 (LI
 
 An ephemeral port opened and is listening for connections on all interfaces.
 
-## Confirming the vulnerability  
+<!--<div class="row col-md-12">-->
+<!--<h2>Confirming the vulnerability</h2>-->
+## Confirming the vulnerability
 
 To confirm the vulnerability lets send a serialized object and confirm the program attempted to deserialized it. I built the project in Intellij Idea and attached breakpoints on the socket accept and readObject method. Sending an arbitrary payload from ysoserial to the socket:
 
@@ -66,25 +68,37 @@ At this point we can consider the ui subproject and jetty subproject vulnerable.
 
 ## Exploitation
 
- Each projects dependencies can be listed using the gradle task *dependencies* and executing ysoserial with no arguments lists the known gadget chains. Cross checking these two lists:
-
-| Library | Vulnerable version | ui-subproject version | Exploitable |
-| -------- | -------- | -------- |
-|  BeanShell1 | org.beanshell:bsh:2.0b5 | n/a  | N |
-|  C3P0 | com.mchange:c3p0:0.9.5.2, com.mchange:mchange-commons-java:0.2.11 | n/a | N |
-|  CommonsBeanutils1 | commons-beanutils:commons-beanutils:1.9.2, commons-collections:commons-collections:3.1, commons-logging:commons-logging:1.2 | n/a | N |
-|  CommonsCollections1 | commons-collections:commons-collections:3.1 | Commons collections 3.2.2 | N |
-|  CommonsCollections2 | org.apache.commons:commons-collections4:4.0 | Commons collections 3.2.2 | N |
-|  CommonsCollections3 | commons-collections:commons-collections:3.1 | Commons collections 3.2.2 | N |
-|  CommonsCollections4 | org.apache.commons:commons-collections4:4.0 | Commons collections 3.2.2 | N |
-|  CommonsCollections5 | commons-collections:commons-collections:3.1 | Commons collections 3.2.2 | N |
-|  FileUpload1 | commons-fileupload:commons-fileupload:1.3.1, commons-io:commons-io:2.4 | n/a | N |
-|  Groovy1 | org.codehaus.groovy:groovy:2.3.9 |  groovy 2.4.4 | N |
-|  Jdk7u21 | Jdk7u21 |  | ? |
-|  Jython1 | org.python:jython-standalone:2.5.2 | n/a | N |
-|  Spring1 | org.springframework:spring-core:4.1.4.RELEASE, org.springframework:spring-beans:4.1.4.RELEASE | n/a | N |
-|  Spring2 | org.springframework:spring-core:4.1.4.RELEASE, org.springframework:spring-aop:4.1.4.RELEASE, aopalliance:aopalliance:1.0, commons-logging:commons-logging:1.2 | n/a | N |
-
+Each projects dependencies can be listed using the gradle task *dependencies* and executing ysoserial with no arguments lists the known gadget chains. Cross checking these two lists:
+ 
+ <table class="table table-bordered table-hover">
+   <thead>
+    <th>Library</th>
+    <th>Vulnerable version</th>
+    <th>ui-subproject version</th>
+    <th>Exploitable</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BeanShell1</td>
+      <td>org.beanshell:bsh:2.0b5</td>
+      <td>n/a</td>
+      <td>N</td>
+    </tr>
+    <tr><td>  C3P0 </td><td> com.mchange:c3p0:0.9.5.2, com.mchange:mchange-commons-java:0.2.11 </td><td> n/a </td><td> N </td></tr>
+    <tr><td>  CommonsBeanutils1 </td><td> commons-beanutils:commons-beanutils:1.9.2, commons-collections:commons-collections:3.1, commons-logging:commons-logging:1.2 </td><td> n/a </td><td> N </td></tr>
+    <tr><td>  CommonsCollections1 </td><td> commons-collections:commons-collections:3.1 </td><td> Commons collections 3.2.2 </td><td> N </td></tr>
+    <tr><td>  CommonsCollections2 </td><td> org.apache.commons:commons-collections4:4.0 </td><td> Commons collections 3.2.2 </td><td> N </td></tr>
+    <tr><td>  commonscollections3 </td><td> commons-collections:commons-collections:3.1 </td><td> commons collections 3.2.2 </td><td> n </td></tr>
+    <tr><td>  commonscollections4 </td><td> org.apache.commons:commons-collections4:4.0 </td><td> commons collections 3.2.2 </td><td> n </td></tr>
+    <tr><td>  commonscollections5 </td><td> commons-collections:commons-collections:3.1 </td><td> commons collections 3.2.2 </td><td> n </td></tr>
+    <tr><td>  fileupload1 </td><td> commons-fileupload:commons-fileupload:1.3.1, commons-io:commons-io:2.4 </td><td> n/a </td><td> n </td></tr>
+    <tr><td>  groovy1 </td><td> org.codehaus.groovy:groovy:2.3.9 </td><td>  groovy 2.4.4 </td><td> n </td></tr>
+    <tr><td>  jdk7u21 </td><td> jdk7u21 </td><td>  </td><td> ? </td></tr>
+    <tr><td>  jython1 </td><td> org.python:jython-standalone:2.5.2 </td><td> n/a </td><td> n </td></tr>
+    <tr><td>  spring1 </td><td> org.springframework:spring-core:4.1.4.release, org.springframework:spring-beans:4.1.4.release </td><td> n/a </td><td> n </td></tr>
+    <tr><td>  Spring2 </td><td> org.springframework:spring-core:4.1.4.RELEASE, org.springframework:spring-aop:4.1.4.RELEASE, aopalliance:aopalliance:1.0, commons-logging:commons-logging:1.2 </td><td> n/a </td><td> N </td></tr>
+  </tbody>
+ </table>
 <br/>
 
 The projects dependencies are all non-vulnerable versions. Downloading [Gradle 2.12](https://gradle.org/gradle-download/) and checking the library versions again shows commons-collections 3.2.1. The commons-collections5 payload in ysoserial successful executes an arbitary commands. 
