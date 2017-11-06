@@ -8,12 +8,11 @@ tags:
   - Deserialization
 ---
 
-
-Java deserialization vulnerabilities are easy to exploit thanks to the [ysoserial](https://github.com/frohoff/ysoserial) project. [Stephen Breen](https://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/) demonstrated Java serialization is used by most application servers and showcased exploits for each one. But how often is serialization used in popular Java projects?
+The [ysoserial](https://github.com/frohoff/ysoserial) makes Java deserialization vulnerabilities easy to exploit and [Stephen Breen](https://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/) demonstrated the majority of Java web servers are vulnerable. I thought it would be interesting to see how common deserialization is in open source Java projects. 
 
 ## Searching GitHub
 
-I developed a [script](https://github.com/philwantsfish/GitHubSearch) to search and sort the most popular repositories on GitHub for a language. Searching the 200 most popular Java repositories for uses of `new ObjectInputStream` showed:
+I developed a [script](https://github.com/philwantsfish/GitHubSearch) to search and sort the most popular repositories on GitHub by language. Searching the 200 most popular Java repositories for uses of `new ObjectInputStream` showed:
 
 <img class="img-responsive" src="{{site.baseurl}}/files/java-deserialized-chart.png" alt="GitHub top 200 chart" width="600">
 
