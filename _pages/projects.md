@@ -16,7 +16,7 @@ layout: main
   <div class="row">
     <div class="col-md-4">
       <h2>Shard</h2>
-      <a href="http://shard.pw"><span class="badge badge-primary">Wiki</span></a>
+      <a href="https://philwantsfish.github.io/shard"><span class="badge badge-primary">Wiki</span></a>
       <a href="http://github.com/philwantsfish/shard"><span class="badge badge-primary">GitHub</span></a>
     </div>
     <div class="col-md-8">
