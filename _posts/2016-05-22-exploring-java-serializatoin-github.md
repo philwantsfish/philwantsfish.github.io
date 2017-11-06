@@ -30,8 +30,6 @@ Gradle deserializes data in the [ObjectSocketWrapper](https://github.com/gradle/
 
 The ui subproject is easy to work with, it can be launched by executing *./gradlew --gui*.
 
-<!-- The ui subproject can be launched by executing *./gradlew --gui* and checking for newly opened ports: -->
-
 {% highlight bash %}
 $ ./gradlew --gui &
 [1] 62481
@@ -43,8 +41,6 @@ java      59699 pokeefe  182u  IPv6 0xb34e0a81bf8fe953      0t0  TCP *:60024 (LI
 
 An ephemeral port opened and is listening for connections on all interfaces.
 
-<!--<div class="row col-md-12">-->
-<!--<h2>Confirming the vulnerability</h2>-->
 ## Confirming the vulnerability
 
 To confirm the vulnerability lets send a serialized object and confirm the program attempted to deserialized it. I built the project in Intellij Idea and attached breakpoints on the socket accept and readObject method. Sending an arbitrary payload from ysoserial to the socket:
@@ -100,12 +96,10 @@ Each projects dependencies can be listed using the gradle task *dependencies* an
  </table>
 <br/>
 
-The projects dependencies are all non-vulnerable versions. Downloading [Gradle 2.12](https://gradle.org/gradle-download/) and checking the library versions again shows commons-collections 3.2.1. The commons-collections5 payload in ysoserial successful executes an arbitary commands. 
+The projects dependencies are all non-vulnerable versions. Downgrading to [Gradle 2.12](https://gradle.org/gradle-download/) and checking the library versions again shows commons-collections 3.2.1. The commons-collections5 payload in ysoserial successful executes an arbitary commands. 
 
 Looking through the Gradle release notes this vulnerability was not mentioned, I suspect the developers were unaware of it and were just upgrading their libraries. I've requested CVE-2016-6199 to track this vulnerability. 
 
 ## Concluding thoughts
 
-If you are running Gradle 2.12 or earlier you should upgrade! While this post details exploiting the UI subproject, the Jetty subproject is similarly vulnerable. 
-
-There is some interesting Android projects using serialization, but I am not too familiar with the Android platform. If anyone is interested in exploring these further feel free to contact me. It might also be interesting to identify and search for framework APIs that wrap serialization.
+If you are running Gradle 2.12 or earlier you should upgrade. While this post details exploiting the UI subproject, the Jetty subproject is similarly vulnerable. The searching script found more projects that appear vulnerable. It might also be interesting to identify and search for framework APIs that wrap serialization. 
