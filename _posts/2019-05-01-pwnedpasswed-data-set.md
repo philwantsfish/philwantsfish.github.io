@@ -9,7 +9,7 @@ tags:
 
 The [Pwned Password data set](https://haveibeenpwned.com/Passwords) contains 551,509,767 sha1 hashes from passwords exposed in data breaches. Troy Hunt has provided an API for searching this data, but interacting with a third-party service is not always an option. A third-party service may have concerns about privacy, availability, and reliability. The size of the data set makes it difficult to include in a web application, just the hashes are about 21 GB. I spent some time investigating what is required to package this data as a SQLite database and as a bloom filter for the JVM. 
 
-# SQLite Database
+## SQLite Database
 
 Each data point contains a sha1 hash and the number of times that password appeared in a breach
 
@@ -60,7 +60,7 @@ sqlite> .exit
 
 Inserting the data created a 26 GB database, then creating the index doubled the size to **52 GB**. 
 
-# Bloom Filter
+## Bloom Filter
 
 An alternative to including a 52 GB database in a deployment is transforming the data into a bloom filter. The bloom filter data structure considerably shrinks the size of the data set with some trade offs. There is a false positive rate when checking if a data point is in the set and the program must keep the bloom filter object in memory.
 
@@ -80,7 +80,7 @@ Once the filter is loaded into memory is can quickly check if a hash if part of 
 
 
 
-# Bloom Filter - Partial Coverage 
+## Bloom Filter - Partial Coverage 
 
 Distributing and loading a 945 MB object into memory is still a big task. One way to reduce the size of the bloom filter without reducing the false positive rate is to only include the most common passwords as these will protect the most users. The original data set includes how many times each password was discovered in a breach. For example, here are the top 5 hashes and the occurrence count:
 
@@ -135,7 +135,7 @@ Graphing the hashes vs occurrences:
 
 The first 5% of the hashes account for over 60% of occurrences! The first 5% provide the most value and only require a 47 MB bloom filter object. The first 10% of the hashes bumps that up to 68% of total occurrences for a 95 MB bloom filter. Each additional 5% of hashes has diminishing returns until roughly 40%. Depending on the requirements of the web application these small bloom filters can provide a lot of value. 
 
-# Conclusions
+## Conclusions
 
 Inserting the data set into a database is the best option. This provides 100% coverage, a 0% false positive rate, and extremely fast results. The draw back is this option requires a lot of disk storage, roughly 52 GB. If storing a large database is not an option, then a bloom filter is a great runner up. A bloom filter with 100% coverage and a 0.1% false positive rate requires ~945 MB of memory. Finally, if that is too much memory, 5% of the hashes results in a 47 MB bloom filter that covers 61% of the total occurrences. 
 
