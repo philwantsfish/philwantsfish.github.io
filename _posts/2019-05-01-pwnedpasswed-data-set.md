@@ -3,6 +3,7 @@ layout: post
 title: Packaging the PwnedPassword data set
 permalink: "security/packaging-pwnedpassword-data-set"
 excerpt: "I spent some time investigating what is required to package this data as a SQLite database and as a bloom filter for the"
+categories: Password Security
 tags:
   - Password Security
 ---
