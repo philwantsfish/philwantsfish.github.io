@@ -8,7 +8,7 @@
     {% include navigation.html %}
 
     <div class="container">
-      <div class="row col-md-8">
+      <div class="row col-md-12">
         <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
       </div>
       <div class="row">
@@ -17,17 +17,17 @@
             <a class="badge badge-secondary" href="{{tag}}">{{ tag }}</a>
           {% endfor %}
         </div>
-        <div class="col-md-4 group2">
+        <div class="col-md-8 group2">
           <span class="glyphicon glyphicon-time"></span> {{ page.date | date_to_long_string }}
         </div>
       </div>
      
-      <hr class="row col-md-8" />
-      <div class="row col-md-8">
+      <hr class="row col-md-12" />
+      <div class="row col-md-12">
         {{ content }}
       </div>
 
-      <div class="row col-md-8">
+      <div class="row col-md-12">
       <hr/>
       <a class="btn btn-primary pull-right" href="/">Read more posts!</a>
       </div>
