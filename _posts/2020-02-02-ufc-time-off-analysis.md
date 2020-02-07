@@ -13,7 +13,7 @@ I've heard the term "Ring Rust" a lot lately and wondered if it was true. It see
 
 
 
-The visualization above shows that the opposite is true, at least for the predefined filter settings, that the longer a figher takes off the MORE Likely they will win. The predefined filter settings are more than 1 year since their previous fight and fights since 2013. 
+The visualization above shows that the opposite is true, at least for the predefined filter settings, that the longer a figher takes off the MORE likely they will win. The predefined filter settings are more than 1 year since their previous fight and fights since 2013. 
 
 Those predefined filter settings are not random. Something happened around 2013 that caused time off to change between a disadvantage to an advantage.  
 
